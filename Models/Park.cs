@@ -11,52 +11,6 @@ namespace LocalPark.Models
     public string Name { get; set; }
     public string City { get; set; }
     public string Trails { get; set; }
-    public string Notes {  get; set; }
-
-    public static List<Park> GetParks()
-    {
-      var apiCallTask = ApiHelper
-        .GetAll();
-
-      var result = apiCallTask.Result;
-
-      JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
-
-      List<Park> parkList = JsonConvert.DeserializeObject<List<Park>>(jsonResponse.ToString());
-    
-      return parkList;
-    }
-
-    public static Park GetDetails(int id)
-    {
-      var apiCallTask = ApiHelper.Get(id);
-
-      var result = apiCallTask.Result;
-
-      JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
-
-      Park park = JsonConvert.DeserializeObject<Park>(jsonResponse.ToString());
-
-      return park;
-    }
-
-    public static void Post(Park park)
-    {
-      string jsonPark = JsonConvert.SerializeObject(park);
-
-      var apiCallTask = ApiHelper.Post(jsonPark);
-    }
-
-    public static void Put(Park park)
-    {
-      string jsonPark = JsonConvert.SerializeObject(park);
-
-      var apiCallTask = ApiHelper.Put(park.ParkId, jsonPark);
-    }
-
-    public static void Delete(int id)
-    {
-      var apiCallTask = ApiHelper.Delete(id);
-    }
+    public string Notes { get; set; }
   }
 }
