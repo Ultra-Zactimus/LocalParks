@@ -52,5 +52,15 @@ namespace LocalPark.Models
         .Post
         (jsonPark);
     }
+
+    public static void Put(Park park)
+    {
+      string jsonPark = JsonConvert
+        .SerializeObject
+        (park);
+      var apiCallTask = ApiHelper
+        .Put
+        (park.ParkId, jsonPark);
+    }
   }
 }
