@@ -26,5 +26,13 @@ namespace LocalPark.Controllers
       
       return RedirectToAction("Index");
     }
+
+    public IActionResult Details(int id)
+    {
+      var park = Park
+        .GetDetails(id);
+
+      return View("Index");
+    }
   }
 }
