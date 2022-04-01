@@ -20,56 +20,43 @@ namespace LocalPark.Models
 
       var result = apiCallTask.Result;
 
-      JObject jsonResponse = JsonConvert
-        .DeserializeObject<JObject>(result);
+      JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
 
-      List<Park> parkList = JsonConvert
-        .DeserializeObject<List<Park>>(jsonResponse
-        .ToString());
-      
+      List<Park> parkList = JsonConvert.DeserializeObject<List<Park>>(jsonResponse.ToString());
+    
       return parkList;
     }
 
     public static Park GetDetails(int id)
     {
-      var apiCallTask = ApiHelper
-        .Get(id);
+      var apiCallTask = ApiHelper.Get(id);
 
-      var result = apiCallTask
-        .Result;
+      var result = apiCallTask.Result;
 
-      JObject jsonResponse = JsonConvert
-        .DeserializeObject<JObject>(result);
+      JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
 
-      Park park = JsonConvert
-        .DeserializeObject<Park>(jsonResponse
-        .ToString());
+      Park park = JsonConvert.DeserializeObject<Park>(jsonResponse.ToString());
 
       return park;
     }
 
     public static void Post(Park park)
     {
-      string jsonPark = JsonConvert
-        .SerializeObject(park);
+      string jsonPark = JsonConvert.SerializeObject(park);
 
-      var apiCallTask = ApiHelper
-        .Post(jsonPark);
+      var apiCallTask = ApiHelper.Post(jsonPark);
     }
 
     public static void Put(Park park)
     {
-      string jsonPark = JsonConvert
-        .SerializeObject(park);
+      string jsonPark = JsonConvert.SerializeObject(park);
 
-      var apiCallTask = ApiHelper
-        .Put(park.ParkId, jsonPark);
+      var apiCallTask = ApiHelper.Put(park.ParkId, jsonPark);
     }
 
     public static void Delete(int id)
     {
-      var apiCallTask = ApiHelper
-        .Delete(id);
+      var apiCallTask = ApiHelper.Delete(id);
     }
   }
 }

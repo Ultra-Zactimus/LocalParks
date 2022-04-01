@@ -69,11 +69,9 @@ namespace LocalPark.Models
       
       RestRequest request = new RestRequest($"parks/{id}", Method.DELETE);
 
-      request
-        .AddHeader("Content-Type", "application/json");
+      request.AddHeader("Content-Type", "application/json");
 
-      var response = await client
-        .ExecutePostTaskAsync(request);
+      var response = await client.ExecutePostTaskAsync(request);
     }
   }
 }

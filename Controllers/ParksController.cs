@@ -12,8 +12,7 @@ namespace LocalPark.Controllers
   {
     public IActionResult Index()
     {
-      var allParks = Park
-        .GetParks();
+      var allParks = Park.GetParks();
 
       return View(allParks);
     }
@@ -21,24 +20,21 @@ namespace LocalPark.Controllers
     [HttpPost]
     public IActionResult Index(Park park)
     {
-      Park
-        .Post(park);
+      Park.Post(park);
       
       return RedirectToAction("Index");
     }
 
     public IActionResult Details(int id)
     {
-      var park = Park
-        .GetDetails(id);
+      var park = Park.GetDetails(id);
 
       return View("Index");
     }
 
     public IActionResult Edit(int id)
     {
-      var park = Park
-        .GetDetails(id);
+      var park = Park.GetDetails(id);
 
       return View(park);
     }
@@ -46,19 +42,16 @@ namespace LocalPark.Controllers
     [HttpPost]
     public IActionResult Details(int id, Park park)
     {
-      park
-        .ParkId = id;
+      park.ParkId = id;
 
-      Park
-        .Put(park);
+      Park.Put(park);
 
       return RedirectToAction("Details", id);
     }
 
     public IActionResult Delete(int id)
     {
-      Park
-        .Delete(id);
+      Park.Delete(id);
 
       return RedirectToAction("Index");
     }
