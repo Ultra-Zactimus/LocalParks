@@ -12,9 +12,7 @@ C:\Users\ultra\desktop\LocalPark\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.
 C:\Users\ultra\desktop\LocalPark\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\ultra\desktop\LocalPark\bin\Debug\net5.0\Microsoft.OpenApi.dll
 C:\Users\ultra\desktop\LocalPark\bin\Debug\net5.0\MySqlConnector.dll
-C:\Users\ultra\desktop\LocalPark\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Users\ultra\desktop\LocalPark\bin\Debug\net5.0\Pomelo.EntityFrameworkCore.MySql.dll
-C:\Users\ultra\desktop\LocalPark\bin\Debug\net5.0\RestSharp.dll
 C:\Users\ultra\desktop\LocalPark\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\ultra\desktop\LocalPark\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\ultra\desktop\LocalPark\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -34,3 +32,13 @@ C:\Users\ultra\desktop\LocalPark\obj\Debug\net5.0\LocalPark.dll
 C:\Users\ultra\desktop\LocalPark\obj\Debug\net5.0\ref\LocalPark.dll
 C:\Users\ultra\desktop\LocalPark\obj\Debug\net5.0\LocalPark.pdb
 C:\Users\ultra\desktop\LocalPark\obj\Debug\net5.0\LocalPark.genruntimeconfig.cache
+C:\Users\ultra\desktop\LocalPark\bin\Debug\net5.0\Humanizer.dll
+C:\Users\ultra\desktop\LocalPark\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\ultra\desktop\LocalPark\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+C:\Users\ultra\desktop\LocalPark\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\ultra\desktop\LocalPark\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\ultra\desktop\LocalPark\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\ultra\desktop\LocalPark\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\ultra\desktop\LocalPark\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\ultra\desktop\LocalPark\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\ultra\desktop\LocalPark\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll

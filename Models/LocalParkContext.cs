@@ -2,21 +2,21 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LocalPark.Models
 {
-  public class LocalParkContext : DbContext
-  {
-    public LocalParkContext(DbContextOptions<LocalParkContext> options) : base(options)
+    public class LocalParkContext : DbContext
     {
+        public LocalParkContext(DbContextOptions<LocalParkContext> options)
+            : base(options)
+        {
+        }
 
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+          builder.Entity<Park>()
+              .HasData(
+                  new Park { ParkId = 1, Name = "Test", City = "The Land of Test", Trails = "Test", Notes = "Test this api is working" }
+              );
+        }
+
+        public DbSet<Park> Parks { get; set; }
     }
-
-    protected override void OnModelCreating(ModelBuilder builder)
-    {
-      builder.Entity<Park>()
-        .HasData(
-          new Park { ParkId = 1, Name = "Rohner Park", City = "Fortuna", Trails = "Rohner Trail", Notes = "Park closes at 7pm" }
-        );
-    }
-
-    public DbSet<Park> Parks { get; set; }
-  }
 }
