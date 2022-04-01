@@ -27,5 +27,20 @@ namespace LocalPark.Models
       
       return parkList;
     }
+
+    public static Park GetDetails(int id)
+    {
+      var apiCallTask = ApiHelper.Get(id);
+      var result = apiCallTask.Result;
+
+      JObject jsonResponse = JsonConvert
+        .DeserializeObject<JObject>
+        (result);
+      Park park = JsonConvert
+        .DeserializeObject<Park>
+        (jsonResponse.ToString());
+
+      return park;
+    }
   }
 }
