@@ -54,5 +54,13 @@ namespace LocalPark.Controllers
 
       return RedirectToAction("Details", id);
     }
+
+    public IActionResult Delete(int id)
+    {
+      Park
+        .Delete(id);
+
+      return RedirectToAction("Index");
+    }
   }
 }
