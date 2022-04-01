@@ -1,4 +1,4 @@
-namespace LocalPark
+namespace LocalPark.Models
 {
   public class Park
   {
