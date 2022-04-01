@@ -26,7 +26,20 @@ namespace LocalPark.Migrations
             migrationBuilder.InsertData(
                 table: "Parks",
                 columns: new[] { "ParkId", "City", "Name", "Notes", "Trails" },
-                values: new object[] { 1, "The Land of Test", "Test", "Test this api is working", "Test" });
+                values: new object[,]
+                {
+                    { 1, "The Land of Test", "Test 1", "Test this api is working", "Test" },
+                    { 2, "The Land of Test", "Test 2", "Test this api is working", "Test" },
+                    { 3, "The Land of Test", "Test 3", "Test this api is working", "Test" },
+                    { 4, "The Land of Test", "Test 4", "Test this api is working", "Test" },
+                    { 5, "The Land of Test", "Test 5", "Test this api is working", "Test" },
+                    { 6, "The Land of Test", "Test 6", "Test this api is working", "Test" },
+                    { 7, "The Land of Test", "Test 7", "Test this api is working", "Test" },
+                    { 8, "The Land of Test", "Test 8", "Test this api is working", "Test" },
+                    { 9, "The Land of Test", "Test 9", "Test this api is working", "Test" },
+                    { 10, "The Land of Test", "Test 10", "Test this api is working", "Test" },
+                    { 11, "The Land of Test", "Test 11", "Test this api is working", "Test" }
+                });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
