@@ -14,8 +14,17 @@ namespace LocalPark.Controllers
     {
       var allParks = Park
         .GetParks();
-        
+
       return View(allParks);
+    }
+
+    [HttpPost]
+    public IActionResult Index(Park park)
+    {
+      Park
+        .Post(park);
+      
+      return RedirectToAction("Index");
     }
   }
 }
