@@ -15,30 +15,35 @@ namespace LocalPark.Models
 
     public static List<Park> GetParks()
     {
-      var apiCallTask = ApiHelper.GetAll();
+      var apiCallTask = ApiHelper
+        .GetAll();
+
       var result = apiCallTask.Result;
 
       JObject jsonResponse = JsonConvert
         .DeserializeObject<JObject>
-        (result);
+          (result);
+
       List<Park> parkList = JsonConvert
         .DeserializeObject<List<Park>>
-        (jsonResponse.ToString());
+          (jsonResponse.ToString());
       
       return parkList;
     }
 
     public static Park GetDetails(int id)
     {
-      var apiCallTask = ApiHelper.Get(id);
+      var apiCallTask = ApiHelper
+        .Get(id);
+
       var result = apiCallTask.Result;
 
       JObject jsonResponse = JsonConvert
-        .DeserializeObject<JObject>
-        (result);
+        .DeserializeObject<JObject>(result);
+
       Park park = JsonConvert
-        .DeserializeObject<Park>
-        (jsonResponse.ToString());
+        .DeserializeObject<Park>(jsonResponse
+        .ToString());
 
       return park;
     }
@@ -46,21 +51,25 @@ namespace LocalPark.Models
     public static void Post(Park park)
     {
       string jsonPark = JsonConvert
-        .SerializeObject
-        (park);
+        .SerializeObject(park);
+
       var apiCallTask = ApiHelper
-        .Post
-        (jsonPark);
+        .Post(jsonPark);
     }
 
     public static void Put(Park park)
     {
       string jsonPark = JsonConvert
-        .SerializeObject
-        (park);
+        .SerializeObject(park);
+
       var apiCallTask = ApiHelper
-        .Put
-        (park.ParkId, jsonPark);
+        .Put(park.ParkId, jsonPark);
+    }
+
+    public static void Delete(int id)
+    {
+      var apiCallTask = ApiHelper
+        .Delete(id);
     }
   }
 }
