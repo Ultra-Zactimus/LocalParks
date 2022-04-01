@@ -42,5 +42,17 @@ namespace LocalPark.Controllers
 
       return View(park);
     }
+
+    [HttpPost]
+    public IActionResult Details(int id, Park park)
+    {
+      park
+        .ParkId = id;
+
+      Park
+        .Put(park);
+
+      return RedirectToAction("Details", id);
+    }
   }
 }
