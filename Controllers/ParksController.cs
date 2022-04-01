@@ -34,5 +34,13 @@ namespace LocalPark.Controllers
 
       return View("Index");
     }
+
+    public IActionResult Edit(int id)
+    {
+      var park = Park
+        .GetDetails(id);
+
+      return View(park);
+    }
   }
 }
