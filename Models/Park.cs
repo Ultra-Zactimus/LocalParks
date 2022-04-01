@@ -21,12 +21,11 @@ namespace LocalPark.Models
       var result = apiCallTask.Result;
 
       JObject jsonResponse = JsonConvert
-        .DeserializeObject<JObject>
-          (result);
+        .DeserializeObject<JObject>(result);
 
       List<Park> parkList = JsonConvert
-        .DeserializeObject<List<Park>>
-          (jsonResponse.ToString());
+        .DeserializeObject<List<Park>>(jsonResponse
+        .ToString());
       
       return parkList;
     }
@@ -36,7 +35,8 @@ namespace LocalPark.Models
       var apiCallTask = ApiHelper
         .Get(id);
 
-      var result = apiCallTask.Result;
+      var result = apiCallTask
+        .Result;
 
       JObject jsonResponse = JsonConvert
         .DeserializeObject<JObject>(result);

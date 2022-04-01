@@ -15,16 +15,16 @@ namespace LocalPark
         {
             CreateHostBuilder(args)
                 .Build()
-                    .Run();
+                .Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host
                 .CreateDefaultBuilder(args)
-                    .ConfigureWebHostDefaults(webBuilder =>
-                    {
-                        webBuilder
-                            .UseStartup<Startup>();
-                    });
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder
+                        .UseStartup<Startup>();
+                });
     }
 }
