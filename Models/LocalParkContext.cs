@@ -13,7 +13,7 @@ namespace LocalPark.Models
         {
           builder.Entity<Park>()
               .HasData(
-                  new Park { ParkId = 1, Name = "Test", City = "The Land of Test", Trails = "Test", Notes = "Test this api is working" }
+                  new Park { ParkId = 2, Name = "Test", City = "The Land of Test", Trails = "Test", Notes = "Test this api is working" }
               );
         }
 

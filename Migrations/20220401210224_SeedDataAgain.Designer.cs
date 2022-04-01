@@ -2,14 +2,16 @@
 using LocalPark.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace LocalPark.Migrations
 {
     [DbContext(typeof(LocalParkContext))]
-    partial class LocalParkContextModelSnapshot : ModelSnapshot
+    [Migration("20220401210224_SeedDataAgain")]
+    partial class SeedDataAgain
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

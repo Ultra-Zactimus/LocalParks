@@ -2,14 +2,16 @@
 using LocalPark.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace LocalPark.Migrations
 {
     [DbContext(typeof(LocalParkContext))]
-    partial class LocalParkContextModelSnapshot : ModelSnapshot
+    [Migration("20220401210056_SeedData")]
+    partial class SeedData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,7 +43,7 @@ namespace LocalPark.Migrations
                     b.HasData(
                         new
                         {
-                            ParkId = 2,
+                            ParkId = 1,
                             City = "The Land of Test",
                             Name = "Test",
                             Notes = "Test this api is working",

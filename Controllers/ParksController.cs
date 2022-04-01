@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using LocalPark.Models;
+using LocalPark.Filters;
+using LocalPark.Wrappers;
 
 namespace LocalPark.Controllers
 {
@@ -48,17 +50,26 @@ namespace LocalPark.Controllers
       return await query.ToListAsync();
     }
 
-    [HttpGet("{id}")]
-    public async Task<ActionResult<Park>> GetPark(int id)
+    // [HttpGet("{id}")]
+    // public async Task<ActionResult<Park>> GetPark(int id)
+    // {
+    //     var park = await _db.Parks.FindAsync(id);
+
+    //     if (park == null)
+    //     {
+    //         return NotFound();
+    //     }
+
+    //     return park;
+    // }
+
+    
+    [HttpGet("{id}")] // comment out lines 66 to 72 and comment in 52 to 63 to remove pagination
+    public async Task<IActionResult> GetById(int id)
     {
-        var park = await _db.Parks.FindAsync(id);
+        var park = await _db.Parks.Where(model => model.ParkId == id).FirstOrDefaultAsync();
 
-        if (park == null)
-        {
-            return NotFound();
-        }
-
-        return park;
+        return Ok(new Response<Park>(park));
     }
 
     [HttpPut("{id}")]
@@ -96,7 +107,15 @@ namespace LocalPark.Controllers
       _db.Parks.Add(park);
       await _db.SaveChangesAsync();
 
-      return CreatedAtAction(nameof(GetPark), new { id = park.ParkId }, park);
+      return CreatedAtAction(nameof(GetById), new { id = park.ParkId }, park); // change GetById back to GetPark to remove Pagination
+    }
+
+    [HttpGet] // comment out this GetAll controller to remove pagination
+    public async Task<IActionResult> GetAll([FromQuery] PaginationFilter filter)
+    {
+        var validFilter = new PaginationFilter(filter.PageNumber, filter.PageSize);
+        var response = await _db.Parks.ToListAsync();
+        return Ok(response);
     }
 
     [HttpDelete("{id}")]
