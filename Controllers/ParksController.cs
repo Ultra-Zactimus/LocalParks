@@ -12,7 +12,9 @@ namespace LocalPark.Controllers
   {
     public IActionResult Index()
     {
-      var allParks = Park.GetParks();
+      var allParks = Park
+        .GetParks();
+        
       return View(allParks);
     }
   }
